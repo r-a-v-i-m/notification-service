@@ -1,6 +1,52 @@
-# Copy this file to terraform.tfvars and fill in your values
-
+# AWS Configuration
 aws_region = "us-east-1"
-environment = "dev"
+availability_zones = ["us-east-1a", "us-east-1b"]
+
+# Project Configuration
 project_name = "notification-service"
+environment = "dev"
+
+# Notification Service Configuration
 ses_from_email = "your-verified-email@domain.com"
+# ses_configuration_set = "your-ses-config-set"  # Optional
+# sns_sms_sender_id = "YourApp"  # Optional
+
+# Lambda Configuration
+lambda_runtime = "nodejs18.x"
+lambda_timeout = 30
+lambda_memory_size = 512
+lambda_reserved_concurrency = 100
+
+# DynamoDB Configuration
+dynamodb_billing_mode = "PAY_PER_REQUEST"
+# dynamodb_read_capacity = 5   # Only used if billing_mode is PROVISIONED
+# dynamodb_write_capacity = 5  # Only used if billing_mode is PROVISIONED
+outbox_ttl_days = 7
+
+# API Gateway Configuration
+api_gateway_throttle_burst_limit = 2000
+api_gateway_throttle_rate_limit = 1000
+
+# Monitoring Configuration
+enable_detailed_monitoring = true
+log_retention_days = 14
+enable_xray_tracing = true
+
+# Security Configuration
+enable_vpc = false
+# vpc_cidr = "10.0.0.0/16"
+# private_subnet_cidrs = ["10.0.1.0/24", "10.0.2.0/24"]
+enable_encryption = true
+
+# Cost Optimization
+enable_auto_scaling = true
+auto_scaling_target_value = 70
+
+# Common tags for all resources
+tags = {
+  Project     = "notification-service"
+  Environment = "dev"
+  ManagedBy   = "terraform"
+  Owner       = "your-team@company.com"
+  CostCenter  = "engineering"
+}
