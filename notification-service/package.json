@@ -1,0 +1,45 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "Production-grade AWS Lambda notification service with outbox pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/",
+    "build": "zip -r notification-service.zip src/ node_modules/",
+    "deploy": "terraform init && terraform apply"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/client-ses": "^3.450.0",
+    "@aws-sdk/client-sns": "^3.450.0",
+    "@aws-sdk/client-sqs": "^3.450.0",
+    "@aws-sdk/client-cloudwatch": "^3.450.0",
+    "@aws-sdk/lib-dynamodb": "^3.450.0",
+    "@aws-sdk/util-retry": "^3.450.0",
+    "uuid": "^9.0.1",
+    "handlebars": "^4.7.8",
+    "joi": "^17.11.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.55.0",
+    "@types/jest": "^29.5.8",
+    "aws-sdk-mock": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "notification",
+    "ses",
+    "sns",
+    "dynamodb",
+    "outbox-pattern"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
