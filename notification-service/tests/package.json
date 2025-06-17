@@ -1,0 +1,23 @@
+{
+  "name": "notification-service-tests",
+  "version": "1.0.0", 
+  "description": "Test suite for notification service",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "aws-sdk-mock": "^5.8.0"
+  }
+}
