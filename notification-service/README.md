@@ -1,6 +1,6 @@
-# Production-Grade AWS Notification Service
+# AWS Notification Service
 
-A production-ready serverless notification service built with AWS Lambda, DynamoDB, SES, and SNS. Features the outbox pattern for reliable message delivery, retry mechanisms, and comprehensive monitoring.
+A comprehensive, production-grade serverless notification service built on AWS with Terraform infrastructure as code.
 
 ## 🚀 Features
 
